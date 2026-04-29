@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimientos de Stock</title>
+  <style>
+    :root {
+      --color-background-primary: #ffffff;
+      --color-background-secondary: #f4f4f5;
+      --color-border-secondary: #d4d4d8;
+      --color-border-tertiary: #e4e4e7;
+      --color-text-primary: #18181b;
+      --color-text-secondary: #52525b;
+      --color-text-tertiary: #a1a1aa;
+      --border-radius-lg: 12px;
+      --border-radius-md: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    select,
+    button {
+      font-family: inherit;
+    }
+
+    select:focus,
+    button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div
+    style="background: rgba(0,0,0,0.45); min-height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; padding: 1rem 0;">
+    <div
+      style="background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-secondary); width: 96%; max-width: 860px; overflow: hidden;">
+
+      <div
+        style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 0.5px solid var(--color-border-tertiary);">
+        <span style="font-size: 15px; font-weight: 500; color: var(--color-text-primary);">Movimientos de Stock</span>
+        <span style="font-size: 18px; color: var(--color-text-secondary); cursor: pointer;">×</span>
+      </div>
+
+      <div style="display: flex; min-height: 420px;">
+
+        <div
+          style="width: 170px; border-right: 0.5px solid var(--color-border-tertiary); padding: 8px 0; flex-shrink: 0;">
+          <div style="padding: 10px 16px; font-size: 12px; color: var(--color-text-secondary); cursor: pointer;">CARNES
+            VACUNAS</div>
+          <div style="padding: 10px 16px; font-size: 12px; color: var(--color-text-secondary); cursor: pointer;">QUESOS
+          </div>
+          <div style="padding: 10px 16px; font-size: 12px; color: var(--color-text-secondary); cursor: pointer;">PANES
+            DE HAMBURGUESA</div>
+          <div style="padding: 10px 16px; font-size: 12px; color: var(--color-text-secondary); cursor: pointer;">HUEVOS
+          </div>
+          <div style="padding: 10px 16px; font-size: 12px; color: var(--color-text-secondary); cursor: pointer;">PICKERS
+          </div>
+          <div
+            style="padding: 10px 16px; font-size: 12px; font-weight: 500; color: #534AB7; border-left: 3px solid #534AB7; background: #EEEDFE; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            SIGNATURE BURGER
+          </div>
+        </div>
+
+        <div style="flex: 1; padding: 16px; border-right: 0.5px solid var(--color-border-tertiary);">
+          <div
+            style="display: flex; align-items: center; gap: 8px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 6px 12px; margin-bottom: 16px; background: var(--color-background-secondary);">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <circle cx="6.5" cy="6.5" r="4.5" stroke="var(--color-text-secondary)" stroke-width="1.2" />
+              <line x1="9.9" y1="9.9" x2="13.5" y2="13.5" stroke="var(--color-text-secondary)" stroke-width="1.2"
+                stroke-linecap="round" />
+            </svg>
+            <span style="font-size: 12px; color: var(--color-text-tertiary);">Buscar...</span>
+          </div>
+
+          <div
+            style="display: flex; flex-direction: column; align-items: center; padding: 10px; border: 1.5px solid #534AB7; border-radius: var(--border-radius-md); background: #EEEDFE; cursor: pointer; width: 100px;">
+            <div
+              style="width: 64px; height: 54px; background: linear-gradient(135deg,#f5c4b3 60%,#f09575 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
+              <svg width="38" height="30" viewBox="0 0 38 30">
+                <ellipse cx="19" cy="9" rx="16" ry="7" fill="#e2b07a" />
+                <rect x="3" y="14" width="32" height="5" rx="2" fill="#c87941" />
+                <rect x="3" y="19" width="32" height="5" rx="2" fill="#e2b07a" />
+                <ellipse cx="19" cy="24" rx="16" ry="5" fill="#d4924e" />
+              </svg>
+            </div>
+            <span
+              style="font-size: 11px; font-weight: 500; color: #534AB7; text-align: center; line-height: 1.3;">Doble<br>Cheeseburguer</span>
+          </div>
+
+        </div>
+
+        <div style="width: 300px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+
+          <div style="position: relative;">
+            <select
+              style="width: 100%; font-size: 12px; padding: 7px 10px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-primary); appearance: none;">
+              <option>Consumo Interno</option>
+              <option>Egreso por ajuste de stock</option>
+            </select>
+          </div>
+
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; background: #EEEDFE; border: 0.5px solid #AFA9EC; border-radius: var(--border-radius-md); padding: 6px 10px;">
+            <span style="font-size: 11px; color: #534AB7; font-weight: 500;">Consumo interno Martha Sanchez</span>
+            <span style="font-size: 14px; color: #534AB7; cursor: pointer;">×</span>
+          </div>
+
+          <div
+            style="border: 0.5px solid #AFA9EC; border-radius: var(--border-radius-md); overflow: hidden; background: #EEEDFE;">
+            <div
+              style="display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 0.5px solid #AFA9EC; background: #534AB7;">
+              <span style="font-size: 11px; color: #dedde9; font-weight: 500;">Insumo</span>
+              <span style="font-size: 11px; color: #dedde9; font-weight: 500;">Cant.</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border-bottom: 0.5px solid #CECBF6;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style="cursor: pointer;">
+                    <path
+                      d="M1.5 3.5h11M4.5 3.5V2a1 1 0 011-1h3a1 1 0 011 1v1.5M6 6v4.5M8 6v4.5M3.5 3.5v9a1 1 0 001 1h5a1 1 0 001-1v-9"
+                      stroke="#AFA9EC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span style="font-size: 11px; color: #26215C;">Pan de hamburguesa</span>
+                </div>
+                <div
+                  style="display: flex; align-items: center; gap: 6px; background: #fff; border: 0.5px solid #AFA9EC; border-radius: 4px; padding: 1px 4px;">
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">-</span>
+                  <span
+                    style="font-size: 11px; font-weight: 500; color: #26215C; min-width: 14px; text-align: center;">1</span>
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">+</span>
+                </div>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border-bottom: 0.5px solid #CECBF6;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style="cursor: pointer;">
+                    <path
+                      d="M1.5 3.5h11M4.5 3.5V2a1 1 0 011-1h3a1 1 0 011 1v1.5M6 6v4.5M8 6v4.5M3.5 3.5v9a1 1 0 001 1h5a1 1 0 001-1v-9"
+                      stroke="#AFA9EC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span style="font-size: 11px; color: #26215C;">Medallón de carne</span>
+                </div>
+                <div
+                  style="display: flex; align-items: center; gap: 6px; background: #fff; border: 0.5px solid #AFA9EC; border-radius: 4px; padding: 1px 4px;">
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">-</span>
+                  <span
+                    style="font-size: 11px; font-weight: 500; color: #26215C; min-width: 14px; text-align: center;">2</span>
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">+</span>
+                </div>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border-bottom: 0.5px solid #CECBF6;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style="cursor: pointer;">
+                    <path
+                      d="M1.5 3.5h11M4.5 3.5V2a1 1 0 011-1h3a1 1 0 011 1v1.5M6 6v4.5M8 6v4.5M3.5 3.5v9a1 1 0 001 1h5a1 1 0 001-1v-9"
+                      stroke="#AFA9EC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span style="font-size: 11px; color: #26215C;">Queso cheddar</span>
+                </div>
+                <div
+                  style="display: flex; align-items: center; gap: 6px; background: #fff; border: 0.5px solid #AFA9EC; border-radius: 4px; padding: 1px 4px;">
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">-</span>
+                  <span
+                    style="font-size: 11px; font-weight: 500; color: #26215C; min-width: 14px; text-align: center;">4</span>
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">+</span>
+                </div>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border-bottom: 0.5px solid #CECBF6;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style="cursor: pointer;">
+                    <path
+                      d="M1.5 3.5h11M4.5 3.5V2a1 1 0 011-1h3a1 1 0 011 1v1.5M6 6v4.5M8 6v4.5M3.5 3.5v9a1 1 0 001 1h5a1 1 0 001-1v-9"
+                      stroke="#AFA9EC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span style="font-size: 11px; color: #26215C;">Kétchup</span>
+                </div>
+                <div
+                  style="display: flex; align-items: center; gap: 6px; background: #fff; border: 0.5px solid #AFA9EC; border-radius: 4px; padding: 1px 4px;">
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">-</span>
+                  <span
+                    style="font-size: 11px; font-weight: 500; color: #26215C; min-width: 24px; text-align: center;">0.030</span>
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">+</span>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style="cursor: pointer;">
+                    <path
+                      d="M1.5 3.5h11M4.5 3.5V2a1 1 0 011-1h3a1 1 0 011 1v1.5M6 6v4.5M8 6v4.5M3.5 3.5v9a1 1 0 001 1h5a1 1 0 001-1v-9"
+                      stroke="#AFA9EC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span style="font-size: 11px; color: #26215C;">Cebolla fresca brunoise</span>
+                </div>
+                <div
+                  style="display: flex; align-items: center; gap: 6px; background: #fff; border: 0.5px solid #AFA9EC; border-radius: 4px; padding: 1px 4px;">
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">-</span>
+                  <span
+                    style="font-size: 11px; font-weight: 500; color: #26215C; min-width: 24px; text-align: center;">0.030</span>
+                  <span
+                    style="font-size: 14px; color: #534AB7; cursor: pointer; line-height: 1; user-select: none;">+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="display: flex; align-items: center; gap: 6px; padding: 6px 8px; background: #EEEDFE; border: 0.5px solid #AFA9EC; border-radius: var(--border-radius-md); margin-top: 2px;">
+            <div style="position: relative;">
+              <svg width="28" height="28" viewBox="0 0 28 28">
+                <rect x="1" y="6" width="26" height="18" rx="3" fill="#888780" />
+                <rect x="4" y="9" width="20" height="9" rx="1.5" fill="#D3D1C7" />
+                <rect x="4" y="20" width="6" height="4" rx="1" fill="#5F5E5A" />
+              </svg>
+              <div
+                style="position:absolute;top:-5px;right:-5px;background:#534AB7;color:#fff;border-radius:50%;width:14px;height:14px;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:500;">
+                5</div>
+            </div>
+            <span style="font-size: 10px; color: #534AB7;">5 insumos en el movimiento</span>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: auto;">
+            <button
+              style="flex: 1; padding: 8px; font-size: 12px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: var(--color-background-primary); color: var(--color-text-secondary); cursor: pointer;">CANCELAR</button>
+            <button
+              style="flex: 1; padding: 8px; font-size: 12px; font-weight: 500; border-radius: var(--border-radius-md); border: none; background: #534AB7; color: #fff; cursor: pointer;">CONFIRMAR</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
